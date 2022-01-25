@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dist/styles.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <span class="time">00:00</span>
+
+    <div class="players">
+      <img class="icon inline-block" src="./img/players.png" />
+      <span class="player-count">0</span>
+    </div>
+
+    <main class="hud">
+      <span class="job">Loading...</span>
+
+      <div class="main-hud">
+        <div class="status-container">
+          <img class="icon health-i" src="./img/health.png" />
+          <div class="bar health-b"></div>
+        </div>
+
+        <div class="status-container">
+          <img class="icon" src="./img/armor.png" />
+          <div class="bar armor-b"></div>
+        </div>
+
+        <div class="status-container">
+          <img class="icon" src="./img/hunger.png" />
+          <div class="bar hunger-b"></div>
+        </div>
+
+        <div class="status-container">
+          <img class="icon" src="./img/thirst.png" />
+          <div class="bar thirst-b"></div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --health: 100;
+    --armor: 100;
+    --hunger: 100;
+    --thirst: 100;
+  }
+
+  *,
+  *::before,
+  *::after {
+    @apply text-white font-poppins text-c_s;
+  }
+
+  body {
+    @apply opacity-0 translate-y-[-20px];
+    transition: opacity 250ms ease-out, transform 250ms ease-out;
+  }
+}
+
+@layer components {
+  .hud {
+    @apply bg-black w-[180px] h-[90px] bg-opacity-30
+      absolute right-0 mt-[50px] mr-[35px]
+      rounded-[5px]
+      flex flex-col;
+  }
+
+  .main-hud {
+    @apply flex flex-col mr-4 gap-1;
+  }
+
+  .status-container {
+    @apply flex gap-4 ml-4 relative justify-start;
+  }
+
+  .bar {
+    @apply w-full h-[7px] rounded-full self-center z-10 bg-gray-300 bg-opacity-40 relative;
+    transition: width 250ms ease-out;
+  }
+
+  .bar::after {
+    @apply content-[''] absolute inset-0 rounded-full;
+    transition: width 250ms ease-out;
+  }
+
+  .job {
+    @apply text-center mb-1 text-[.65rem] mt-1;
+  }
+
+  .icon {
+    @apply w-4 invert;
+  }
+
+  .time {
+    @apply absolute top-[32px] right-[125px] text-sm translate-x-[50%];
+  }
+
+  .players {
+    @apply absolute top-[32px] right-[35px];
+  }
+}
+
+@layer utilities {
+  .health-b::after {
+    @apply bg-c_health;
+    width: calc(var(--health) * 1%);
+  }
+
+  .armor-b::after {
+    @apply bg-c_armor;
+    width: calc(var(--armor) * 1%);
+  }
+
+  .hunger-b::after {
+    @apply bg-c_hunger;
+    width: calc(var(--hunger) * 1%);
+  }
+
+  .thirst-b::after {
+    @apply bg-c_thirst;
+    width: calc(var(--thirst) * 1%);
+  }
+}
